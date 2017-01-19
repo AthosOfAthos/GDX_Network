@@ -1,16 +1,18 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Paddle {
-    int x, y;
+    float x, y, moveSpeed;
     Texture paddleTexture;
     Sprite paddleSprite;
-    public Paddle(int getX, int getY) {
+    public Paddle(int getX, int getY, float getSpeed) {
         x = getX;
         y = getY;
+        moveSpeed = getSpeed;
         paddleTexture = new Texture("paddle.png");
     }
 
@@ -19,7 +21,15 @@ public class Paddle {
         y = getY;
     }
 
-    public void draw(SpriteBatch batch) {
+    public void moveUp() {
+        y -= moveSpeed * Gdx.graphics.getDeltaTime();
+    }
 
+    public void moveDown() {
+        y += moveSpeed * Gdx.graphics.getDeltaTime();
+    }
+
+    public void draw(SpriteBatch batch) {
+        paddleSprite.draw(batch);
     }
 }
