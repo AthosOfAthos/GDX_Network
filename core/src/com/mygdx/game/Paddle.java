@@ -23,11 +23,11 @@ public class Paddle {
     }
 
     public void moveUp() {
-        y -= moveSpeed * Gdx.graphics.getDeltaTime();
+        y += moveSpeed * Gdx.graphics.getDeltaTime();
     }
 
     public void moveDown() {
-        y += moveSpeed * Gdx.graphics.getDeltaTime();
+        y -= moveSpeed * Gdx.graphics.getDeltaTime();
     }
 
     public void draw(SpriteBatch batch) {
