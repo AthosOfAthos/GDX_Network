@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b526a4f4-973f-41cf-b3ed-ca12fd661472" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/mygdx/game/Paddle.java" afterPath="$PROJECT_DIR$/core/src/com/mygdx/game/Paddle.java" />
     </list>
     <ignored path="$PROJECT_DIR$/core/.gradle/" />
     <ignored path="$PROJECT_DIR$/core/build/" />
@@ -41,11 +40,11 @@
       <file leaf-file-name="MyGdxGame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            <state relative-caret-position="180">
+              <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
               <folding>
-                <element signature="e#657#658#0" expanded="true" />
-                <element signature="e#679#680#0" expanded="true" />
+                <element signature="e#924#925#0" expanded="true" />
+                <element signature="e#946#947#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1153,8 +1152,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" />
         <option value="$PROJECT_DIR$/core/src/com/mygdx/game/Paddle.java" />
+        <option value="$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java" />
       </list>
     </option>
   </component>
@@ -1507,8 +1506,8 @@
         <state relative-caret-position="432">
           <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
           <folding>
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#946#947#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1530,19 +1529,19 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#946#947#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/mygdx/game/MyGdxGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        <state relative-caret-position="180">
+          <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
           <folding>
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#946#947#0" expanded="true" />
           </folding>
         </state>
       </provider>
