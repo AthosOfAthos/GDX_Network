@@ -14,7 +14,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void create () {
 	    batch = new SpriteBatch();
-	    playerPaddle = new Paddle(100,100,10);
+	    playerPaddle = new Paddle(100,100,100);
 	}
 
 	private void loop() {
