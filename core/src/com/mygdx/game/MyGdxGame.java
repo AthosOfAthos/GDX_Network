@@ -8,10 +8,13 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class MyGdxGame extends ApplicationAdapter {
     int width, height;
+    OrthographicCamera camera;
+    StretchViewport viewport;
 
 	SpriteBatch batch;
 	Paddle playerPaddle;
@@ -20,8 +23,10 @@ public class MyGdxGame extends ApplicationAdapter {
 	public void create () {
 	    width = Gdx.graphics.getWidth();
 	    height = Gdx.graphics.getHeight();
+	    camera = new OrthographicCamera(150,150);
+	    viewport = new StretchViewport(150, 150, camera);
 	    batch = new SpriteBatch();
-	    playerPaddle = new Paddle(100,100,100);
+	    playerPaddle = new Paddle(-50,0,100);
 	}
 
 	@Override
@@ -43,6 +48,8 @@ public class MyGdxGame extends ApplicationAdapter {
 	    loop();
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		camera.update();
+		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 		playerPaddle.draw(batch);
 		batch.end();
