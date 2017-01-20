@@ -14,6 +14,7 @@ public class Paddle {
         y = getY;
         moveSpeed = getSpeed;
         paddleTexture = new Texture("paddle.png");
+        paddleSprite = new Sprite(paddleTexture);
     }
 
     public void setPos(int getX, int getY) {
@@ -30,6 +31,7 @@ public class Paddle {
     }
 
     public void draw(SpriteBatch batch) {
+        paddleSprite.setPosition(x,y);
         paddleSprite.draw(batch);
     }
 }
