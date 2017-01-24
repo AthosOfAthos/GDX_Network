@@ -23,10 +23,10 @@ public class MyGdxGame extends ApplicationAdapter {
 	
 	@Override
 	public void create () {
-	    width = Gdx.graphics.getWidth();
-	    height = Gdx.graphics.getHeight();
-	    camera = new OrthographicCamera(150,150);
-	    viewport = new StretchViewport(150, 150, camera);
+	    width = 200;
+	    height = 200;
+	    camera = new OrthographicCamera(width,height);
+	    viewport = new StretchViewport(width, height, camera);
 	    batch = new SpriteBatch();
 	    leftPaddle = new Paddle(-50,0,100);
 	    rightPaddle = new Paddle(50, 0, 100);
