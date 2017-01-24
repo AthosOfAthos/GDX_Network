@@ -8,6 +8,10 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Box2D;
+import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
@@ -17,6 +21,9 @@ public class MyGdxGame extends ApplicationAdapter {
     int width, height;
     OrthographicCamera camera;
     StretchViewport viewport;
+
+    World world;//BOX2d world
+    Box2DDebugRenderer debugView;//makes debuging things ez
 
 	SpriteBatch batch;
 	Paddle leftPaddle;
@@ -28,6 +35,8 @@ public class MyGdxGame extends ApplicationAdapter {
 	    state = 1;
 	    width = 200;
 	    height = 200;
+	    Box2D.init();
+	    world = new World(new Vector2(0,0), false);//create world with no gravity and no sleep
 	    camera = new OrthographicCamera(width,height);
 	    viewport = new StretchViewport(width, height, camera);
 	    batch = new SpriteBatch();
