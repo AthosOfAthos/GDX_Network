@@ -33,12 +33,6 @@ public class MyGdxGame extends ApplicationAdapter {
 	    ball = new Ball(0,0,10);
 	}
 
-	@Override
-    public void resize(int getWidth, int getHeight) {
-	    width = getWidth;
-	    height = getHeight;
-    }
-
 	private void loop() {
         if (Gdx.input.isKeyPressed(Input.Keys.W)) {
             leftPaddle.moveUp();
