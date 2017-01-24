@@ -15,7 +15,7 @@ public class Ball {
         x = getX;
         y = getY;
         nx = (int)(Math.random()*10);
-    	ny = (int)(Math.random()*10);
+    	ny = 0;//(int)(Math.random()*10);
         moveSpeed = getSpeed;
         ballTexture = new Texture("ball.png");
         ballSprite = new Sprite(ballTexture);
