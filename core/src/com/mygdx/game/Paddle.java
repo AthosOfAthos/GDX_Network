@@ -24,10 +24,16 @@ public class Paddle {
 
     public void moveUp() {
         y += moveSpeed * Gdx.graphics.getDeltaTime();
+        if (y > 75) {
+            y = 75;
+        }
     }
 
     public void moveDown() {
         y -= moveSpeed * Gdx.graphics.getDeltaTime();
+        if (y < -100) {
+            y = -100;
+        }
     }
 
     public void draw(SpriteBatch batch) {
