@@ -12,6 +12,8 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class MyGdxGame extends ApplicationAdapter {
+    int state;
+    //1 = in 2player game
     int width, height;
     OrthographicCamera camera;
     StretchViewport viewport;
@@ -23,6 +25,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	
 	@Override
 	public void create () {
+	    state = 1;
 	    width = 200;
 	    height = 200;
 	    camera = new OrthographicCamera(width,height);
@@ -34,31 +37,47 @@ public class MyGdxGame extends ApplicationAdapter {
 	}
 
 	private void loop() {
-        if (Gdx.input.isKeyPressed(Input.Keys.W)) {
-            leftPaddle.moveUp();
-        } else if (Gdx.input.isKeyPressed(Input.Keys.S)) {
-            leftPaddle.moveDown();
+
+	    switch (state) {
+            case 1:
+                if (Gdx.input.isKeyPressed(Input.Keys.W)) {
+                    leftPaddle.moveUp();
+                } else if (Gdx.input.isKeyPressed(Input.Keys.S)) {
+                    leftPaddle.moveDown();
+                }
+                if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
+                    rightPaddle.moveUp();
+                } else if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
+                    rightPaddle.moveDown();
+                }
+                ball.loop();
+                break;
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
-            rightPaddle.moveUp();
-        } else if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-            rightPaddle.moveDown();
+
         }
-        ball.loop();
-    }
+
+
 
 	@Override
 	public void render () {
-	    loop();
-		Gdx.gl.glClearColor(0, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		camera.update();
-		batch.setProjectionMatrix(camera.combined);
-		batch.begin();
-		leftPaddle.draw(batch);
-		rightPaddle.draw(batch);
-		ball.draw(batch);
-		batch.end();
+
+	    switch (state) {
+            case 1:
+                loop();
+                Gdx.gl.glClearColor(0, 0, 0, 1);
+                Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+                camera.update();
+                batch.setProjectionMatrix(camera.combined);
+                batch.begin();
+                leftPaddle.draw(batch);
+                rightPaddle.draw(batch);
+                ball.draw(batch);
+                batch.end();
+                break;
+        }
+
+
+
 	}
 	
 	@Override
