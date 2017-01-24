@@ -14,8 +14,8 @@ public class Ball {
     public Ball(int getX, int getY, float getSpeed) {
         x = getX;
         y = getY;
-        velX = -1;//(int)(Math.random()*10);
-    	velY = 0;//(int)(Math.random()*10);
+        velX = -1;
+    	velY = 2;
         moveSpeed = getSpeed;
         ballTexture = new Texture("ball.png");
         ballSprite = new Sprite(ballTexture);
@@ -32,7 +32,12 @@ public class Ball {
     }
 
     private void offscreen() {
-    	//checks if offscreen and updates nx like a bouncce		
+    	if(y<-90||y>90){
+    		velY = -velY;
+    	}
+    	if(x<-90||x>90){
+    		velX=-velX;
+    	}
 	}
 
 	public void draw(SpriteBatch batch) {

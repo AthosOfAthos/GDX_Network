@@ -9,9 +9,13 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Box2D;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
@@ -24,6 +28,9 @@ public class MyGdxGame extends ApplicationAdapter {
 
     World world;//BOX2d world
     Box2DDebugRenderer debugView;//makes debuging things ez
+    BodyDef theThing;
+    Body notAWHore;
+    CircleShape veryCircle;
 
 	SpriteBatch batch;
 	Paddle leftPaddle;
@@ -37,6 +44,11 @@ public class MyGdxGame extends ApplicationAdapter {
 	    height = 200;
 	    Box2D.init();
 	    world = new World(new Vector2(0,0), false);//create world with no gravity and no sleep
+	    debugView = new Box2DDebugRenderer();
+	    theThing = new BodyDef();
+	    theThing.type = BodyType.DynamicBody;
+	    theThing.position.set(0,0);
+	    notAWHore = world.createBody(theThing);
 	    camera = new OrthographicCamera(width,height);
 	    viewport = new StretchViewport(width, height, camera);
 	    batch = new SpriteBatch();
@@ -82,6 +94,7 @@ public class MyGdxGame extends ApplicationAdapter {
                 rightPaddle.draw(batch);
                 ball.draw(batch);
                 batch.end();
+                debugView.render(world, camera.combined);
                 break;
         }
 
