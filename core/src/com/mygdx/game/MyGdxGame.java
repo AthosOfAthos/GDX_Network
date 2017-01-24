@@ -29,7 +29,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	    viewport = new StretchViewport(150, 150, camera);
 	    batch = new SpriteBatch();
 	    playerPaddle = new Paddle(-50,0,100);
-	    rightPaddle = new Paddle(-50, -5, 100);
+	    rightPaddle = new Paddle(50, 0, 100);
 	    ball = new Ball(-50,0,10);
 	}
 
