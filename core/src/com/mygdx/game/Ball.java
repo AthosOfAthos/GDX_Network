@@ -7,15 +7,15 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Ball {
     int x, y;
-    int nx,ny;
+    int velX,velY;
     float moveSpeed;
     Texture ballTexture;
     Sprite ballSprite;
     public Ball(int getX, int getY, float getSpeed) {
         x = getX;
         y = getY;
-        nx = -1;//(int)(Math.random()*10);
-    	ny = 0;//(int)(Math.random()*10);
+        velX = -1;//(int)(Math.random()*10);
+    	velY = 0;//(int)(Math.random()*10);
         moveSpeed = getSpeed;
         ballTexture = new Texture("ball.png");
         ballSprite = new Sprite(ballTexture);
@@ -27,7 +27,7 @@ public class Ball {
     }
 
     public void  loop(){
-    	setPos(nx+x,ny+y);
+    	setPos(velX+x,velY+y);
     	offscreen();
     }
 
