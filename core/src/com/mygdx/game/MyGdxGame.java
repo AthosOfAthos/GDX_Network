@@ -17,7 +17,7 @@ public class MyGdxGame extends ApplicationAdapter {
     StretchViewport viewport;
 
 	SpriteBatch batch;
-	Paddle playerPaddle;
+	Paddle leftPaddle;
 	Paddle rightPaddle;
 	Ball ball;
 	
@@ -28,7 +28,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	    camera = new OrthographicCamera(150,150);
 	    viewport = new StretchViewport(150, 150, camera);
 	    batch = new SpriteBatch();
-	    playerPaddle = new Paddle(-50,0,100);
+	    leftPaddle = new Paddle(-50,0,100);
 	    rightPaddle = new Paddle(50, 0, 100);
 	    ball = new Ball(0,0,10);
 	}
@@ -41,9 +41,9 @@ public class MyGdxGame extends ApplicationAdapter {
 
 	private void loop() {
         if (Gdx.input.isKeyPressed(Input.Keys.W)) {
-            playerPaddle.moveUp();
+            leftPaddle.moveUp();
         } else if (Gdx.input.isKeyPressed(Input.Keys.S)) {
-            playerPaddle.moveDown();
+            leftPaddle.moveDown();
         }
         if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
             rightPaddle.moveUp();
@@ -61,7 +61,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		camera.update();
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
-		playerPaddle.draw(batch);
+		leftPaddle.draw(batch);
 		rightPaddle.draw(batch);
 		ball.draw(batch);
 		batch.end();
