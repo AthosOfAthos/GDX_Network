@@ -30,7 +30,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	    batch = new SpriteBatch();
 	    playerPaddle = new Paddle(-50,0,100);
 	    rightPaddle = new Paddle(50, 0, 100);
-	    ball = new Ball(-50,0,10);
+	    ball = new Ball(0,0,10);
 	}
 
 	@Override
