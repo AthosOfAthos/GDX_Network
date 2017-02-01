@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Ball {
     int x, y;
+    int startVelX, startVelY;
     int velX,velY;
     float moveSpeed;
     Texture ballTexture;
@@ -14,6 +15,8 @@ public class Ball {
     public Ball(int getX, int getY, float getSpeed) {
         x = getX;
         y = getY;
+        startVelX = -1;
+        startVelY = 2;
         velX = -1;
     	velY = 2;
         moveSpeed = getSpeed;
@@ -36,7 +39,10 @@ public class Ball {
     		velY = -velY;
     	}
     	if(x<-90||x>90){
-    		velX=-velX;
+    		velX = startVelX;
+    		velY = startVelY;
+    		x = 0;
+    		y = 0;
     	}
 	}
 
