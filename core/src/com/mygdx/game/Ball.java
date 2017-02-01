@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Ball {
+    int scoreLeft, scoreRight;
     double x, y;
     int startVelX, startVelY;
     double velX,velY;
@@ -12,6 +13,8 @@ public class Ball {
     Texture ballTexture;
     Sprite ballSprite;
     public Ball(int getX, int getY, float getSpeed) {
+        scoreLeft = 0;
+        scoreRight = 0;
         x = getX;
         y = getY;
         startVelX = -1;
@@ -37,6 +40,18 @@ public class Ball {
     	if(y<-90||y>90){
     		velY = -velY;
     	}
+    	if (x > 90) {
+            velX = startVelX;
+            velY = startVelY;
+            x = 0;
+            y = 0;
+        } else if (x < -90) {
+            velX = startVelX;
+            velY = startVelY;
+            x = 0;
+            y = 0;
+        }
+
     	if(x<-90||x>90){
     		velX = startVelX;
     		velY = startVelY;
