@@ -3,7 +3,6 @@ package com.mygdx.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Paddle {
     float x, y, moveSpeed;
@@ -36,7 +35,7 @@ public class Paddle {
         }
     }
 
-    public void draw(SpriteBatch batch) {
+    public void draw(com.badlogic.gdx.graphics.g2d.SpriteBatch batch) {
         paddleSprite.setPosition(x,y);
         paddleSprite.draw(batch);
     }
