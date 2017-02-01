@@ -40,8 +40,8 @@ public class MyGdxGame extends ApplicationAdapter {
 	    camera = new OrthographicCamera(width,height);
 	    viewport = new StretchViewport(width, height, camera);
 	    batch = new SpriteBatch();
-	    leftPaddle = new Paddle(-80,0,100);
-	    rightPaddle = new Paddle(80, 0, 100);
+	    leftPaddle = new Paddle(-80,0,100, "paddleRed.png");
+	    rightPaddle = new Paddle(80, 0, 100, "paddleBlu.png");
 	    ball = new Ball(0,0,10);
 	}
 

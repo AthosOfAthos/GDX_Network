@@ -8,11 +8,11 @@ public class Paddle {
     float x, y, moveSpeed;
     Texture paddleTexture;
     Sprite paddleSprite;
-    public Paddle(int getX, int getY, float getSpeed) {
+    public Paddle(int getX, int getY, float getSpeed, String getFile) {
         x = getX;
         y = getY;
         moveSpeed = getSpeed;
-        paddleTexture = new Texture("paddle.png");
+        paddleTexture = new Texture(getFile);
         paddleSprite = new Sprite(paddleTexture);
     }
 
