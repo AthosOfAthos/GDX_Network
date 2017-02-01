@@ -15,9 +15,9 @@ public class Ball {
         x = getX;
         y = getY;
         startVelX = -1;
-        startVelY = 2;
+        startVelY = 0;
         velX = -1;
-    	velY = 2;
+    	velY = 0;
         moveSpeed = getSpeed;
         ballTexture = new Texture("ball.png");
         ballSprite = new Sprite(ballTexture);
@@ -46,8 +46,14 @@ public class Ball {
 	}
 
 	public void collide(float leftY, float rightY) {
+        int paddleLength = 25;
         if (x < -77 && x > -80) {
-            if (y > leftY && y < leftY + 15) {
+            if (y > leftY - 2 && y < leftY + paddleLength) {
+                velX *= -1;
+            }
+        }
+        if (x > 77 && x < 80) {
+            if (y > rightY - 2 && y < rightY + paddleLength) {
                 velX *= -1;
             }
         }
