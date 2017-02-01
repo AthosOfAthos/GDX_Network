@@ -45,6 +45,14 @@ public class Ball {
     	}
 	}
 
+	public void collide(float leftY, float rightY) {
+        if (x < -77 && x > -80) {
+            if (y > leftY && y < leftY + 15) {
+                velX *= -1;
+            }
+        }
+    }
+
 	public void draw(SpriteBatch batch) {
         ballSprite.setPosition(x,y);
         ballSprite.draw(batch);

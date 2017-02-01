@@ -60,6 +60,7 @@ public class MyGdxGame extends ApplicationAdapter {
                     rightPaddle.moveDown();
                 }
                 ball.loop();
+                ball.collide(leftPaddle.y, rightPaddle.y);
                 break;
         }
 
