@@ -50,7 +50,20 @@ public class Ball {
         if (x < -77 && x > -80) {
             if (y > leftY - 2 && y < leftY + paddleLength) {
                 velX *= -1;
+                double angleVel = Math.atan2(velY, velX);
+//                System.out.println(angleVel);
+                double totalVel = Math.sqrt(velY*velY + velX*velX);
+                double hitPos = (leftY - y)/25 + .5;
+                System.out.println(hitPos);
+                hitPos *= 90; // paddle curve
+                angleVel += Math.toRadians(hitPos);
+//                System.out.println(hitPos);
+//                System.out.println(angleVel);
+                velX = Math.cos(angleVel) * totalVel;
+                velY = Math.sin(angleVel) * totalVel;
+                setPos(velX+x,velY+y);
             }
+
         }
         if (x > 77 && x < 80) {
             if (y > rightY - 2 && y < rightY + paddleLength) {
@@ -66,6 +79,7 @@ public class Ball {
 //                System.out.println(angleVel);
                 velX = Math.cos(angleVel) * totalVel;
                 velY = Math.sin(angleVel) * totalVel;
+                setPos(velX+x,velY+y);
             }
         }
     }
