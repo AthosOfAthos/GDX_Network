@@ -49,6 +49,11 @@ public class Ball {
         if (x < -77 && x > -80) {
             if (y > leftY && y < leftY + 15) {
                 velX *= -1;
+                double angleVel = Math.atan2(velY, velX);
+                double totalVel = Math.sqrt(velY*velY + velX*velX);
+                double hitPos = (leftY - y)/25;
+                
+                
             }
         }
     }
