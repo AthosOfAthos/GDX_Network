@@ -26,12 +26,6 @@ public class MyGdxGame extends ApplicationAdapter {
     OrthographicCamera camera;
     StretchViewport viewport;
 
-    World world;//BOX2d world
-    Box2DDebugRenderer debugView;//makes debuging things ez
-    BodyDef theThing;
-    Body notAWHore;
-    CircleShape veryCircle;
-
 	SpriteBatch batch;
 	Paddle leftPaddle;
 	Paddle rightPaddle;
@@ -43,12 +37,6 @@ public class MyGdxGame extends ApplicationAdapter {
 	    width = 200;
 	    height = 200;
 	    Box2D.init();
-	    world = new World(new Vector2(0,0), false);//create world with no gravity and no sleep
-	    debugView = new Box2DDebugRenderer();
-	    theThing = new BodyDef();
-	    theThing.type = BodyType.DynamicBody;
-	    theThing.position.set(0,0);
-	    notAWHore = world.createBody(theThing);
 	    camera = new OrthographicCamera(width,height);
 	    viewport = new StretchViewport(width, height, camera);
 	    batch = new SpriteBatch();
@@ -94,7 +82,6 @@ public class MyGdxGame extends ApplicationAdapter {
                 rightPaddle.draw(batch);
                 ball.draw(batch);
                 batch.end();
-                debugView.render(world, camera.combined);
                 break;
         }
 
