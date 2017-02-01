@@ -5,9 +5,9 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Ball {
-    int x, y;
+    double x, y;
     int startVelX, startVelY;
-    int velX,velY;
+    double velX,velY;
     float moveSpeed;
     Texture ballTexture;
     Sprite ballSprite;
@@ -23,7 +23,7 @@ public class Ball {
         ballSprite = new Sprite(ballTexture);
     }
 
-    public void setPos(int getX, int getY) {
+    public void setPos(double getX, double getY) {
         x = getX;
         y = getY;
     }
@@ -56,16 +56,22 @@ public class Ball {
             if (y > rightY - 2 && y < rightY + paddleLength) {
                 velX *= -1;
                 double angleVel = Math.atan2(velY, velX);
+//                System.out.println(angleVel);
                 double totalVel = Math.sqrt(velY*velY + velX*velX);
-                double hitPos = (leftY - y)/25;
-                
-                
+                double hitPos = (rightY - y)/25 + .5;
+                System.out.println(hitPos);
+                hitPos *= 90; // paddle curve
+                angleVel += Math.toRadians(hitPos);
+//                System.out.println(hitPos);
+//                System.out.println(angleVel);
+                velX = Math.cos(angleVel) * totalVel;
+                velY = Math.sin(angleVel) * totalVel;
             }
         }
     }
 
 	public void draw(SpriteBatch batch) {
-        ballSprite.setPosition(x,y);
+        ballSprite.setPosition((float)x,(float)y);
         ballSprite.draw(batch);
     }
 }
