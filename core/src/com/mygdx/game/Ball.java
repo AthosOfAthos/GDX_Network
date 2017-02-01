@@ -55,6 +55,11 @@ public class Ball {
         if (x > 77 && x < 80) {
             if (y > rightY - 2 && y < rightY + paddleLength) {
                 velX *= -1;
+                double angleVel = Math.atan2(velY, velX);
+                double totalVel = Math.sqrt(velY*velY + velX*velX);
+                double hitPos = (leftY - y)/25;
+                
+                
             }
         }
     }
