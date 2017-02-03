@@ -1,14 +1,15 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 
 public class Ball {
     int scoreLeft, scoreRight;
     double x, y;
-    int startVelX, startVelY;
-    double velX,velY;
+    Vector2 moveVector;
     float moveSpeed;
     Texture ballTexture;
     Sprite ballSprite;
@@ -17,10 +18,8 @@ public class Ball {
         scoreRight = 0;
         x = getX;
         y = getY;
-        startVelX = -1;
-        startVelY = 0;
-        velX = -1;
-    	velY = 0;
+        moveVector = new Vector2(1, 0);
+        moveVector.setAngle(180);
         moveSpeed = getSpeed;
         ballTexture = new Texture("ball.png");
         ballSprite = new Sprite(ballTexture);
@@ -32,36 +31,34 @@ public class Ball {
     }
 
     public void  loop(){
-    	setPos(velX+x,velY+y);
+        //somewhere this went wrong...
+        //very very wrong.....
+        float deltaTime = Gdx.graphics.getDeltaTime();
+        x += moveVector.x * moveSpeed * deltaTime;
+        y += moveVector.y * moveSpeed * deltaTime;
     	offscreen();
     }
 
     private void offscreen() {
     	if(y<-90||y>90){
-    		velY = -velY;
+
     	}
     	if (x > 90) {
-            velX = startVelX;
-            velY = startVelY;
+            moveVector.setLength(1);
+            moveVector.setAngle(-180);
             x = 0;
             y = 0;
         } else if (x < -90) {
-            velX = startVelX;
-            velY = startVelY;
+            moveVector.setLength(1);
+            moveVector.setAngle(180);
             x = 0;
             y = 0;
         }
-
-    	if(x<-90||x>90){
-    		velX = startVelX;
-    		velY = startVelY;
-    		x = 0;
-    		y = 0;
-    	}
 	}
 
 	public void collide(float leftY, float rightY) {
         int paddleLength = 25;
+        /*
         if (x < -77 && x > -80) {
             if (y > leftY - 2 && y < leftY + paddleLength) {
                 velX *= -1;
@@ -89,6 +86,7 @@ public class Ball {
                 setPos(velX+x,velY+y);
             }
         }
+        */
     }
 
 	public void draw(SpriteBatch batch) {

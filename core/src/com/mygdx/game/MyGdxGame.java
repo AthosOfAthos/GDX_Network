@@ -42,7 +42,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	    batch = new SpriteBatch();
 	    leftPaddle = new Paddle(-80,0,100, "paddleRed.png");
 	    rightPaddle = new Paddle(80, 0, 100, "paddleBlu.png");
-	    ball = new Ball(0,0,10);
+	    ball = new Ball(0,0,100);
 	}
 
 	private void loop() {
