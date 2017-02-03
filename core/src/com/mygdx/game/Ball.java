@@ -19,7 +19,7 @@ public class Ball {
         x = getX;
         y = getY;
         moveVector = new Vector2(1, 0);
-        moveVector.setAngle(90);
+        moveVector.setAngle(200);
         moveSpeed = getSpeed;
         ballTexture = new Texture("ball.png");
         ballSprite = new Sprite(ballTexture);
@@ -58,6 +58,20 @@ public class Ball {
 
 	public void collide(float leftY, float rightY) {
         int paddleLength = 25;
+
+        if (x < -77 && x > -80) {
+            if (y > leftY - 2 && y < leftY + paddleLength) {
+                moveVector.rotate(180);
+                moveSpeed *= 1.02;
+            }
+        }
+
+        if (x > 77 && x < 80) {
+            if (y > rightY - 2 && y < rightY + paddleLength) {
+                moveVector.rotate(180);
+                moveSpeed *= 1.02;
+            }
+        }
         /*
         if (x < -77 && x > -80) {
             if (y > leftY - 2 && y < leftY + paddleLength) {
