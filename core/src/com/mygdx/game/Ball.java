@@ -19,7 +19,7 @@ public class Ball {
         x = getX;
         y = getY;
         moveVector = new Vector2(1, 0);
-        moveVector.setAngle(180);
+        moveVector.setAngle(90);
         moveSpeed = getSpeed;
         ballTexture = new Texture("ball.png");
         ballSprite = new Sprite(ballTexture);
@@ -41,7 +41,7 @@ public class Ball {
 
     private void offscreen() {
     	if(y<-90||y>90){
-
+            moveVector.rotate(180);
     	}
     	if (x > 90) {
             moveVector.setLength(1);
