@@ -40,36 +40,38 @@ public class Ball {
     }
 
     private void offscreen() {
-    	if(y<-90||y>90){
-            moveVector.rotate(180);
+    	if(y<-90){
+            moveVector.y = 1;
     	}
+        if(y>90){
+            moveVector.y = -1;
+        }
     	if (x > 90) {
-            moveVector.setLength(1);
-            moveVector.setAngle(-180);
-            x = 0;
-            y = 0;
+            reset();
         } else if (x < -90) {
-            moveVector.setLength(1);
-            moveVector.setAngle(180);
-            x = 0;
-            y = 0;
+            reset();
         }
 	}
+
+	private void reset() {
+        moveVector.setLength(1);
+        moveVector.setAngle(200);
+        x = 0;
+        y = 0;
+    }
 
 	public void collide(float leftY, float rightY) {
         int paddleLength = 25;
 
         if (x < -77 && x > -80) {
             if (y > leftY - 2 && y < leftY + paddleLength) {
-                moveVector.rotate(180);
-                moveSpeed *= 1.02;
+                moveVector.x = 1;
             }
         }
 
         if (x > 77 && x < 80) {
             if (y > rightY - 2 && y < rightY + paddleLength) {
-                moveVector.rotate(180);
-                moveSpeed *= 1.02;
+                moveVector.x = -1;
             }
         }
         /*
