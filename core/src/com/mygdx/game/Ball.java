@@ -47,8 +47,10 @@ public class Ball {
             moveVector.y = -1;
         }
     	if (x > 90) {
+            scoreRight++;
             reset();
         } else if (x < -90) {
+            scoreLeft++;
             reset();
         }
 	}
