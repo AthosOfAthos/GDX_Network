@@ -17,10 +17,18 @@ public class MyGdxGame extends ApplicationAdapter {
     OrthographicCamera camera;
     StretchViewport viewport;
 
+    int leftScore, rightScore;
+
 	SpriteBatch batch;
 	Texture zero;
+	Sprite leftZero;
+	Sprite rightZero;
 	Texture one;
+	Sprite leftOne;
+	Sprite rightOne;
 	Texture two;
+	Sprite leftTwo;
+	Sprite rightTwo;
 	Paddle leftPaddle;
 	Paddle rightPaddle;
 	Ball ball;
@@ -30,6 +38,8 @@ public class MyGdxGame extends ApplicationAdapter {
 	    state = 1;
 	    width = 200;
 	    height = 200;
+	    leftScore = 0;
+	    rightScore = 0;
 	    zero = new Texture("0.png");
 	    one = new Texture("1.png");
 	    two = new Texture("2.png");
