@@ -6,6 +6,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 
@@ -17,7 +18,9 @@ public class MyGdxGame extends ApplicationAdapter {
     StretchViewport viewport;
 
 	SpriteBatch batch;
-	Sprite zero;
+	Texture zero;
+	Texture one;
+	Texture two;
 	Paddle leftPaddle;
 	Paddle rightPaddle;
 	Ball ball;
@@ -27,6 +30,9 @@ public class MyGdxGame extends ApplicationAdapter {
 	    state = 1;
 	    width = 200;
 	    height = 200;
+	    zero = new Texture("0.png");
+	    one = new Texture("1.png");
+	    two = new Texture("2.png");
 	    camera = new OrthographicCamera(width,height);
 	    viewport = new StretchViewport(width, height, camera);
 	    batch = new SpriteBatch();
