@@ -48,7 +48,11 @@ public class MyGdxGame extends ApplicationAdapter {
 	private void loop() {
 
 	    switch (state) {
+            case 0:
+                //Titlescreen
+                break;
             case 1:
+                //Two player game
                 if (Gdx.input.isKeyPressed(Input.Keys.W)) {
                     leftPaddle.moveUp();
                 } else if (Gdx.input.isKeyPressed(Input.Keys.S)) {
@@ -61,6 +65,12 @@ public class MyGdxGame extends ApplicationAdapter {
                 }
                 ball.loop();
                 ball.collide(leftPaddle.y, rightPaddle.y);
+                break;
+            case 2:
+                //host
+                break;
+            case 3:
+                //client
                 break;
         }
 
