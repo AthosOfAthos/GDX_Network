@@ -95,8 +95,36 @@ public class MyGdxGame extends ApplicationAdapter {
     }
 
     private void drawScore() {
-        leftZero.draw(batch);
-        rightZero.draw(batch);
+
+	    switch (ball.scoreLeft) {
+            case 0:
+                leftZero.draw(batch);
+                break;
+            case 1:
+                leftOne.draw(batch);
+                break;
+            case 2:
+                leftTwo.draw(batch);
+                break;
+            default:
+                leftZero.draw(batch);
+                break;
+        }
+
+        switch (ball.scoreRight) {
+            case 0:
+                rightZero.draw(batch);
+                break;
+            case 1:
+                rightOne.draw(batch);
+                break;
+            case 2:
+                rightTwo.draw(batch);
+                break;
+            default:
+                rightZero.draw(batch);
+                break;
+        }
     }
 
 
