@@ -18,6 +18,12 @@ public class MyGdxGame extends ApplicationAdapter {
     StretchViewport viewport;
 
 	SpriteBatch batch;
+
+	//Ui
+    Texture UITwoTexture;
+    Sprite UITwo;
+
+	//gameSprites
 	Texture zero;
 	Sprite leftZero;
 	Sprite rightZero;
