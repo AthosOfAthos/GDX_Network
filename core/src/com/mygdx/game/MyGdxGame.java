@@ -41,8 +41,14 @@ public class MyGdxGame extends ApplicationAdapter {
 	    leftScore = 0;
 	    rightScore = 0;
 	    zero = new Texture("0.png");
+	    leftZero = new Sprite(zero);
+	    rightZero = new Sprite(zero);
 	    one = new Texture("1.png");
+	    leftOne = new Sprite(one);
+	    rightOne = new Sprite(one);
 	    two = new Texture("2.png");
+	    leftTwo = new Sprite(two);
+	    rightTwo = new Sprite(two);
 	    camera = new OrthographicCamera(width,height);
 	    viewport = new StretchViewport(width, height, camera);
 	    batch = new SpriteBatch();
