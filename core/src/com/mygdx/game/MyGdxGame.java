@@ -109,7 +109,9 @@ public class MyGdxGame extends ApplicationAdapter {
                 leftTwo.draw(batch);
                 break;
             default:
-                leftZero.draw(batch);
+                if (ball.scoreLeft > 2) {
+                    ball.scoreLeft = 0;
+                }
                 break;
         }
 
@@ -124,7 +126,9 @@ public class MyGdxGame extends ApplicationAdapter {
                 rightTwo.draw(batch);
                 break;
             default:
-                rightZero.draw(batch);
+                if (ball.scoreRight > 2) {
+                    ball.scoreRight = 0;
+                }
                 break;
         }
     }
