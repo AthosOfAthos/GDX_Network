@@ -42,13 +42,19 @@ public class MyGdxGame extends ApplicationAdapter {
 	    rightScore = 0;
 	    zero = new Texture("0.png");
 	    leftZero = new Sprite(zero);
+	    leftZero.setPosition(-10,90);
 	    rightZero = new Sprite(zero);
+	    rightZero.setPosition(10,90);
 	    one = new Texture("1.png");
 	    leftOne = new Sprite(one);
+	    leftOne.setPosition(-10,90);
 	    rightOne = new Sprite(one);
+	    rightOne.setPosition(10,90);
 	    two = new Texture("2.png");
 	    leftTwo = new Sprite(two);
+	    leftTwo.setPosition(-10,90);
 	    rightTwo = new Sprite(two);
+	    rightTwo.setPosition(10,90);
 	    camera = new OrthographicCamera(width,height);
 	    viewport = new StretchViewport(width, height, camera);
 	    batch = new SpriteBatch();
@@ -86,7 +92,12 @@ public class MyGdxGame extends ApplicationAdapter {
                 break;
         }
 
-        }
+    }
+
+    private void drawScore() {
+        leftZero.draw(batch);
+        rightZero.draw(batch);
+    }
 
 
 
@@ -104,6 +115,7 @@ public class MyGdxGame extends ApplicationAdapter {
                 leftPaddle.draw(batch);
                 rightPaddle.draw(batch);
                 ball.draw(batch);
+                drawScore();
                 batch.end();
                 break;
         }
@@ -111,7 +123,7 @@ public class MyGdxGame extends ApplicationAdapter {
 
 
 	}
-	
+
 	@Override
 	public void dispose () {
 		batch.dispose();
